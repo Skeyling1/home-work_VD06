@@ -8,34 +8,63 @@
 <body>
 
 
-<div class="container">
-    <h2 align="center"> Форма для ввода данных о пользователе </h2>
-    
-    <form action="/" method="post">
-      <div class="mb-3">
-        <label for="name" class="form-label">Введите Ваше имя</label>
-        <input type="text" class="form-control" id="name" required>
-      </div>
+    <div class="container">
+        <h2 align="center"> Форма для ввода данных о пользователе </h2>
 
-      <div class="mb-3">
-        <label for="city" class="form-label">Введите Ваш город</label>
-        <input type="text" class="form-control" id="city" required>
-      </div>
+        <form action="/" method="post">
+          <div class="mb-3">
+            <label for="name" class="form-label">Введите Ваше имя</label>
+            <input type="text"  class="form-control" id="name" name="name" required>
+          </div>
 
-      <div class="mb-3">
-        <label for="hobby" class="form-label">Напишите о своем хобби</label>
-          <textarea class="form-control" id="hobby" required></textarea>
-      </div>
+          <div class="mb-3">
+            <label for="city" class="form-label">Введите Ваш город</label>
+            <input type="text"  class="form-control" id="city" name="city" required>
+          </div>
 
-      <div class="mb-3">
-        <label for="age" class="form-label">Введите Ваш возраст</label>
-        <input type="number" class="form-control" id="age" required>
-      </div>
+          <div class="mb-3">
+            <label for="hobby" class="form-label">Напишите о своем хобби</label>
+              <textarea  class="form-control" id="hobby" name="hobby" rows="3" required></textarea>
+          </div>
 
-      <button type="submit" class="btn btn-primary">Отправить</button>
-    </form>
+          <div class="mb-3">
+            <label for="age" class="form-label">Введите Ваш возраст</label>
+            <input type="number"  class="form-control" id="age" name="age" required>
+          </div>
 
-</div>
+          <button type="submit" class="btn btn-primary">Отправить</button>
+        </form>
+
+        <hr>
+
+        <h3>Формы пользователей</h3>
+        <div class="row">
+        {% for post in posts%}
+
+
+            <div class="col-sm-12 col-lg-4">
+
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                    <h5 class="card-title">{{ post.name }}</h5>
+                    <p class="card-text">{{ post.city }}</p>
+                    <p class="card-text">{{ post.hobby }}</p>
+                    <p class="card-text">{{ post.age }}</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+
+
+
+
+        <div>
+
+
+        </div>
+
+    </div>
 
 
 
